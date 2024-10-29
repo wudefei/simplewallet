@@ -1,0 +1,32 @@
+run:
+  go: '1.23.0'
+  timeout: 5m
+  tests: false
+  allow-parallel-runners: true
+  modules-download-mode: readonly
+  issues-exit-code: 0
+output:
+  formats: junit-xml
+linters:
+  disable-all: true
+  enable:
+    - errcheck
+    - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - typecheck
+    - unused
+    - goimports
+    - bodyclose
+    - dogsled
+    - dupl
+
+linters-settings:
+  govet:
+    check-unreacheable: true
+    check-rangeloops: true
+    check-copylocks: true
+    disable:
+      - composite
+
